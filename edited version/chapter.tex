@@ -1,0 +1,190 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{libertine}
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\usepackage{soul}
+\usepackage{setspace}
+\usepackage[left=2.25cm, top=2.5cm, right=2.25cm, bottom=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[authoryear]{natbib}
+\usepackage[german=guillemets]{csquotes}
+\usepackage{bookmark}
+\usepackage{url}
+\usepackage{etoolbox}
+
+\makeatletter
+
+% make numeric styles use name format
+\patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@nmfmt{\NAT@nm}}{}{}
+
+% define \citepos just like \citet
+\DeclareRobustCommand\citepos
+  {\begingroup
+   \let\NAT@nmfmt\NAT@posfmt% ...except with a different name format
+   \NAT@swafalse\let\NAT@ctype\z@\NAT@partrue
+   \@ifstar{\NAT@fulltrue\NAT@citetp}{\NAT@fullfalse\NAT@citetp}}
+
+\let\NAT@orig@nmfmt\NAT@nmfmt
+\def\NAT@posfmt#1{\NAT@orig@nmfmt{#1's}}
+
+\makeatother
+
+\exhyphenpenalty=1000
+\hyphenpenalty=1000
+\widowpenalty=1000
+\clubpenalty=1000
+
+\hypersetup{breaklinks=true,
+            pdfauthor={David Skarbek and Danilo Freire},
+            pdftitle={Prison Gangs},
+            colorlinks=true,
+            citecolor=darkblue,
+            urlcolor=darkblue,
+            linkcolor=darkblue,
+            pdfborder={0 0 0}}
+
+\title{Prison Gangs}
+
+\author{
+David Skarbek\thanks{David Skarbek is Senior Lecturer in Political Economy at King's College London.} 
+\and 
+Danilo Freire\thanks{Danilo Freire is a PhD Candidate in the Department of Political Economy at King's College London. He gratefully acknowledges the support of the Brazilian National Council for Scientific and Technological Development and the Faculty of Social Science and Public Policy at King's College London. Email address: \href{mailto:danilofreire@gmail.com}{danilofreire@gmail.com}. Website: \href{http://danilofreire.com}{http://danilofreire.com}. } 
+}
+
+\date{April 22, 2016}
+
+\begin{document}
+
+\maketitle
+
+\doublespacing
+
+\begin{abstract}
+
+\noindent Although widely seen as unruly and predatory, prison gangs operate as quasi-governments in many American correctional facilities. Inmate groups enforce property rights, regulate illicit markets, and promote cooperation when the state is unable or unwilling to act. Prison gangs are relatively new to the United States, and are best understood as unintended consequences of recent shifts in inmate demographics and the gradual erosion of the convict code. The impact of prison gangs on street-level criminal activities and directions for further research are also discussed.
+
+\vspace{.5cm}
+
+\noindent \textsc{Keywords}: criminal organizations; extralegal institutions; prison gangs; private governance; rational choice \\
+
+\vspace{1cm} 
+
+\begin{center}
+\noindent Forthcoming in Hayden Griffin and Vanessa Woodward (eds). 2016.\\ \textbf{Handbook of Corrections in the United States}. London: Routledge. 
+\end{center}
+
+\end{abstract}
+
+\newpage
+
+\section{Introduction}
+\label{sec:intro}
+
+\noindent Prison gangs are inmate organizations that exist into perpetuity, and whose membership is restrictive, mutually exclusive, and often requires a lifetime commitment. Prior to the 1950s, prison gangs did not exist in the country, but by the late 1970s, inmate organizations were already a dominant force in American correctional facilities \citep[e.g.][]{fleisher2001overview,howell2015history,wells2002study}. The strength of these groups can be inferred from their membership numbers. In 1985, there were about 113 gangs with 13,000 active members in American prisons \citep{camp1985prison}. By 2002, in contrast, about 308,000 prisoners were affiliated with inmate groups \citep{winterdyk2010managing}. The corrections director of California has attested that in 2006 there were up to 60,000 gang members in that state alone \citep{petersilia2006understanding}. As these numbers do not include people who are indirectly involved with prison activities -- such as visitors who smuggle narcotics into prisons for felons to trade \citep{crewe2006prison} -- the real influence of inmate gangs is probably more extensive than official figures suggest.
+
+The emergence of prison gangs was far from peaceful. Gangs have been responsible for most cases of serious misconduct in jails, such as inmate assault \citep{cunningham2007predictive, ralph1991gang,reisig2002administrative}, staff intimidation \citep{gaes2002influence}, sexual misbehavior \citep{ralph1991gang,wyatt2005male}, and drug trafficking \citep{shelden1991comparison}. Moreover, in recent years, prison groups have expanded their reach and made inroads into street-level drug markets,  repeatedly resorting to force \citep[e.g.][]{skarbek2011governance,valdez2005mexican}. For all these reasons, it is unsurprising that inmate organizations are now regarded as the most serious threat to the American prison administration by staff and academics alike \citep{carlson2001prison,delisi2004gang,fleisher2001overview}.
+
+But despite their history of violence, prison gangs are not disorganized collectives. In fact, many gangs are highly structured institutions, often with strict hierarchies, elaborate internal rules, and comprehensive sets of norms \citep{leeson2010criminal,skarbek2012prison}. Most importantly, gangs provide what the prison setting sometimes lacks: \textit{social order}. The literature tells us that the private supply of public goods is not only theoretically possible \citep{bergstrom1986private,olson1965logic,ostrom1992covenants}, but in fact is a frequent occurrence, with such public goods provided by a myriad of social groups. From commodity producers \citep{schepel2005constitution} to Chinese warlords \citep{jackson2003warlords}, a variety of institutions have developed their own enforcement mechanisms to punish noncompliant behavior and promote cooperation. Prison gangs are no exception. 
+
+Often, self-governing groups (like mafias)  play a prominent role in defining and securing property rights \citep{gambetta1996sicilian,skaperdas2001political,varese2011mafias}. Since inmates are constantly subject to extortion and violence, there is high demand for security from the incarcerated population. Convicts cannot always rely on prison staff for protection -- correctional officers may have limited resources, limited information, or both -- therefore prisoners often turn to extralegal institutions for help. Evidence shows that gangs have been successful at protecting property and, perhaps surprisingly, their rise to power has coincided with a dramatic fall in victimization in prisons; the number of inmate riots, assaults, homicides, and suicides have all decreased over recent decades \citep{useem2006prison}. Paradoxically, violent gangs are making prisons safer.
+
+Prison gangs also help inmates to enjoy the benefits of trade. Although the state actively discourages illegal commerce among criminals, trade is widespread in the penal system \citep{davidson1974chicano,kalinich1986power,lankenau2001smoke,williams1974convicts}. The contraband marketplace is so important to inmate social life that some authors call it ``the basis of legitimate power'' within prisons \citep{kalinich1985contraband}. Nevertheless, market transactions are costly in jails. By the nature of their own business, criminals generally distrust each other \citep{gambetta2009codes}. Prison groups solve this social dilemma by enforcing contracts (through violence if required), monitoring transactions, providing general understanding of trade rules, and contacting potential suppliers of goods from street gangs \citep{blatchford2008black}.
+
+Academic works on street gangs greatly outnumber books and articles on prison gangs, and with few exceptions \citep[e.g.][]{freire2014entering,skarbek2010self,skarbek2011governance,skarbek2012prison,skarbek2014social}, inmate institutions have been virtually ignored by political scientists and economists. Yet these two disciplines can offer valuable insights into the inner workings of criminal groups. Rational choice theory, widely employed by economists, appears particularly suited to this task. Rational choice is a variant of methodological individualism, and one of its basic premises is that macrobehavior can be explained by the purposive actions of self-interested individuals. The theory does not require agents to have complete information or perform perfect calculations of their pay-offs \citep{simon1955behavioral}, nor does it describe cognitive function or actual decision making.
+
+Criminals are particularly inclined to behave rationally, as their environment forces them to do so. Mistakes are severely punished in  jails. Errors in judgment may lead to death. Hence we see rational choice as a useful framework to analyze social preferences and collective outcomes in prisons. Furthermore, rational choice does not disregard the role social norms play in the formation of individual preferences \citep{crawford1995grammar,elster1989social,ostrom2000collective}. As we argue below, shared perceptions have framed prison gangs since the earliest days of the phenomenon. However, if the inmate community grows larger and more diverse, norms have to be supplemented by other arrangements such as an organization. The rational choice framework can integrate these various mechanisms into a single, cohesive theory of gang behavior. 
+
+\section{How Gangs Operate}
+\label{sec:gangsoperate}
+
+\noindent
+What drives gang formation? The media generally portray prison gangs as racist, violent, and pathological. The idea does not seem far-fetched: many American gangs, such as the Aryan Brotherhood, the Black Family, or the Mexican Mafia, are indeed organized along racial lines \citep{fong1990organizational,hunt1993change,pelz1991right}. But while race does play a role in gang recruitment, ethnic competition is not the key factor behind the growth in gangs. Rather, we argue that prison gangs are created to support contraband markets through the promotion of cooperation and trust between inmates \citep{fleisher2001overview,roth2014prison}. 
+
+This view is consistent with a vast literature on self-enforcing exchange. These authors claim that it is possible for decentralized communities to engage in trade even without the presence of strong government institutions \citep[e.g.][]{ostrom1992covenants,powell2009public}. Most people in the world still live under governments that are ineffective, weak or corrupt, and many firms run their businesses in areas where the state has only imperfect, if any, control. So, how do they have governance without governments?
+
+A common criticism of privately produced governance is based upon the assumption that if state regulations were absent, long-term exchange could not persist because every interaction would be characterized as a prisoner's dilemma. That is, even if both parties could gain from cooperation, they would still have an incentive to cheat due to the lack of external enforcement of property rights. However, in reality, many self-organizing groups devise private mechanisms to prevent predatory behavior. Historical examples abound. \citet{leeson2009invisible} describes how late seventeenth- and early eighteenth-century pirates used reputation strategies to maximize profits. \citet{stringham2015private} argues that stock exchange traders employed club membership as a signal of trustworthiness. \citet{de1990other}, in turn, analyzes the informal system of property rights in modern Peru and shows how a thriving illegal economy can subsist without, and sometimes in confrontation with, state institutions. 
+
+These cases demonstrate that seemingly erratic behavior may simply be rational responses to unusual economic incentives \citep[p. 6]{leeson2009invisible}. Prison gangs can also be understood through such a lens. Social coordination in gangs is often achieved with a \textit{community responsibility system} (CRS). This institutional device was first employed by merchants in the late medieval period in Europe, and it comprises of a system where the whole community is responsible for the actions and debts of their individual members \citep{greif2006institutions}. A simple example may clarify how CRS induces trustworthiness: 
+
+\begin{quote}
+Consider a situation where a member of Group A borrows money from a member of Group B. If Member A defaults on the debt, then all members of Group A are responsible for repaying it. If Group A does not suitably compensate Member B, then Group B boycotts Group A. If there are substantial benefits available from future interactions with Group B, then the threat of boycott induces payment by Group A. [\dots] Moreover, the corporate nature of the group creates a repeated play scenario among groups even though particular members may never trade again. When groups have reputations for taking responsibility for its members' actions, then two members of different groups who do not know each other can still benefits from trade. \citep[p. 226]{roth2014prison}
+\end{quote}
+
+Qualitative evidence indicates that gangs indeed operate within this type of system. There are two conditions for CRS to work in prisons. First, individuals should be able to signal their group affiliation, so that other prisoners know with which group a person affiliates. This type of screening is not difficult in jail, as inmates routinely use costly signals to convey information \citep{gambetta2009codes}. One's race is a signal that is impossible to fake. Finally, inmates are eager to display voluntary signals of gang affiliation through slang, hand gestures, and other cultural displays \citep{kaminski2010games,valentine2000gangs}.
+
+Second, the community must be able and willing to punish misbehaving members. This condition is also met in the penal system. Gangs routinely use force (or the threat thereof) to maintain social order and punish defectors \citep{skarbek2011governance,skarbek2012prison,skarbek2014social}. A Californian inmate interviewed by \citet[p. 763]{trammell2009values} illustrates this point: ``if one of my guys is messing up then we either offer him up to the other guys or we take him down ourselves.'' 
+
+What is remarkable about CRS is that it facilitates trade even if individuals are not of a cooperative type. Members of the same group have better information about each other and can more easily exert influence over each  other than non-group members. This creates incentives for prisoners -- even those who might be rivals in other contexts -- to work together. Prison gangs may be divided by race, but inmates apparently do not let this factor interrupt exchange flows. As noted by a convict in California, ``the races don't officially mix. That's true but you can buy drugs from whoever and the leaders control that stuff. [\dots] It's not as cut and dry as you think'' \citep[p. 756]{trammell2009values}. Racial tensions could easily escalate in prisons, but because gang wars are costly, groups have an incentive to be peaceful. Order is good for business.
+
+This system becomes established because trade structures inmate relations. Goods that are easily accessible to the general population are notably scarce in prisons. Access to them therefore lends status and prestige to prisoners. Paul, a black British inmate in his early 30s, describes the role illegal trade plays in prisoner hierarchy: ``When I was [dealing] I could say: `I'm a top dog. I've got drugs, I've got this, I've got that, yeah, no-one can't fuck with me'. [\dots] Drugs is power in here, yeah, so is tobacco, and without drugs, tobacco and phonecards [prisons] don't really work.'' \citep[p. 360--361]{crewe2006prison}. 
+
+Prison gangs are key players in the contraband markets. As a prison official notes, ``almost without exception [\dots] the gangs are responsible for the majority of drug trafficking in their institutions'' \citep[p. 52]{camp1985prison}. \citet[p. 361--362]{crewe2006prison} quotes a dialogue with one interviewee where the inmate reflects on the link between money from illegal trading and group protection:
+
+\begin{quote}
+``\textit{If you have the drugs but you have no violence, does that mean the drugs just get taken off you?}''
+
+``[\dots] You need backing. You yourself don't need violence. You've got bounty hunters in prison. [\dots] People who, for a price, will protect you. [\dots] Any smart person would get linked up with the right group. [\dots]''
+
+``\textit{So you're saying that people then gang together because it's a form of protection?}''
+
+``Yes, it's a form of protection and it's power. If I've got half an ounce of heroin I can turn that into probably three or four grams, that's a lot of money in prison, and if you're keeping two or three guys sweet with you, they don't want that breaking up. They're thinking, `fucking hell, we're living alright, we've got it easy in here, nobody is fucking up our little crew, we're sticking together'.''
+\end{quote}
+
+The story above can be generalized to larger groups. \citet[p. 755]{trammell2009values} writes how Jack, an inmate in a California jail, explains the role of prison groups:
+
+\begin{quote}
+``The boys inside, they follow the rules and that means you work with your own boys and do what they say. Look, there is a lot of problems caused by the gangs, no doubt. The thing is, they solve problems too. You want a structure and you want someone to organize the businesses so the gangs have their rules. You don't run up a drug debt, you don't start a fight in the yard and stuff. Gangs are a problem but we took care of business.''
+\end{quote}
+
+In summary, the fundamental role of prison gangs is to promote cooperation and stability between inmates who have strong reasons to distrust each other and who live in an environment that is potentially chaotic and violent. This is done to achieve an important goal: trade. As prisoners live in a resource-scarce world, trading acquires a significant importance, not only in terms of the gains it may bring to dealers, but also through the social relationship it forges. The community responsibility system ensures that commercial exchanges will not be interrupted by predatory individuals. 
+
+\section{The Decline of the Convict Code}
+\label{sec:convictcode} 
+
+\noindent
+Before prison gangs and the community responsibility system, the main source of inmate governance in California was a set of informal norms known as ``the convict code'' \citep{irwin1962thieves,irwin1970felon,jacobs1977stateville,sykes1960inmate}. The code relied on strong images of masculinity \citep{freeman1999correctional,hua2005patterns} and emphasized the importance of being tough, and sometimes hostile, toward fellow prisoners and staff \citep[pp. 369]{cole2013criminal}. Although the code does not include a fixed list of rules -- its application varies significantly from case to case  \citep[e.g.][]{akers1977prisonization,copes2013accounting,trammell2012enforcing} -- \citet[p. 5--9]{sykes1960inmate} affirm that its chief tenets may be classified into five groups. First, there are norms that suggest caution to felons, and are usually condensed in the maxims, ``Do not interfere with inmate interests'' or ``Do rat on an inmate.'' These suggest that inmates should serve their time as freely as possible, with the minimum amount of interference from other prisoners. Second, there are rules that assert that prisoners should avoid engaging in conflict, such as ``Do not fight with other inmates.'' Third, ``Do not exploit other inmates.'' This dictates that deceiving and fraud should be not tolerated against other upstanding convicts. Fourth, the inmate code asks felons not to weaken under any circumstances: ``Be strong.'' Fifth, there are many maxims that forbid convicts from cooperating with guards and authorities in the correction system in general, such as ``Do not trust the staff'' \citep[p. 525]{sutherland1992principles}. 
+
+Those who lived by these rules were seen as ``good cons'' and generally enjoyed better reputations than prisoners who failed to comply with the code \citep{copes2013accounting}. In a setting where physical threats are frequent, enacting the code gave convicts an advantage. There is also evidence that similar prescriptions are followed in other parts of the world, such as the United Kingdom, New Zealand, Mexico, Spain, and Thailand \citep{akers1977prisonization,sirisutthidacha2014patterns,winfree2002prisoner}. The inmate code is not uniformly enforced in these countries \citep[p. 843]{copes2013accounting}, but apparently it also serves as guide to felons abroad.
+
+Scholars have proposed two theories to explain inmate culture and the origins of the convict code. The first is called the deprivation model. This theory suggests that inmate behavior is largely a product of prison life itself \citep{clemmer1940prison,irwin1980prisons,mccorkle1954resocialization}. According to this view, the convict code expresses a collective ``situational response'' \citep{akers1977prisonization} to the problems of ``prisonalization'' \citep{clemmer1940prison}, that is, the deprivation of freedom, security, heterosexual relations, goods and services, and personal autonomy felons routinely endure \citep{sykes1958society}. The model also stresses that this feeling of deprivation is pervasive in jails, and to a varying extent all inmates are familiar with it. This shared experience is what binds prisoners together and it is the main reason why felons adopt the convict code.
+
+Conversely, other authors contend that the convict code is merely an institutionalized version of the thieves' code. This theory is called the importation model and, as the name suggests, it states that criminals bring their former beliefs and behavior to jails   \citep{irwin1962thieves,irwin1970felon,irwin1980prisons}. A number of inmates come from neighborhoods with high levels of violence or notable presence of gangs; hence, it is not surprising that there are strong links between street subculture and the convict code \citep[p. 96]{sirisutthidacha2014patterns}.  \citet[p. 12]{irwin1980prisons} points out the many similarities: 
+
+\begin{quote}
+The central rule to the thieves' code was ``thou shalt not snitch.'' In prison, thieves converted that to the dual form of ``do not rat on another prisoner'' and ``do your own time.'' Thieves were also obliged by their code to be cool and though, that is to maintain respect and dignity; not to show weakness; to help other thieves; and to leave most prisoners alone.
+\end{quote}
+
+Nonetheless, these two hypothesis are not fundamentally incompatible, and scholars now agree that both factors help explain the emergence of the inmate culture \citep{schwartz1971pre,trammell2009values}. On the one hand, prisoners do not enter jails like a \textit{tabula rasa} as the deprivation model seems to predict. On the other hand, inmate behavior is also mediated by prison conditions. Whereas the exact causal mechanisms are yet to be specified \citep{delisi2004gang}, the convict code is likely a result of both social deprivation and previous criminal behavior. 
+
+Regardless of its origins, over the past decades the inmate code has clearly declined in importance \citep{irwin1970felon,jacobs1975stratification,skarbek2014social}. This does not mean that the code's prescriptions are outdated: inmates continue to refer to them and often punish those who systematically violate the code's core tenets  \citep{copes2013accounting,trammell2012enforcing}. However, the growth of the American incarcerated population has significantly weakened the influence of old norms and the most efficient institutions for enforcing them.
+
+The code's effectiveness declined because of dramatic shifts in inmate demographics. California provides a relevant example. Between 1945 and 1970, the inmate population grew from 6,600 to about 25,000, and from 1950 to 2012 the number of prisons increased from 5 to 33 \citep{bass1975analysis,skarbek2014social}. This inflow of new prisoners indicates that spreading and enforcing the convict code became more costly than in the past. Consequently, young inmates are less likely to know and internalize such informal rules \citep{hunt1993change}. 
+
+The expansion of the prison population has also diminished the influence of the inmate code through other channels. Norms are very effective at promoting coordination in small groups, but as the number of interactions increase, the opportunities for an individual to defect multiply \citep{bowles1998moral}. In groups with loose social ties, people have only imperfect information about each other, so reputation effects are not a strong deterrent to uncooperative behavior. Furthermore, in a large community, individuals have additional incentives to free ride and let others bear the costs of punishing norm violators \citep{olson1965logic}. Thus, a norm-based system such as the convict code tends to break down as the number of felons increase. 
+
+The demand for protection in prisons has not declined with a growing inmate population. Rather, the opposite has occurred. However, inmates responded to this unprecedented situation by devising a new type of organization to provide order in jails. This is how prison gangs turned into powerful institutions. Prison gangs are well equipped to enforce rules in a large and heterogeneous penal system. As we noted in the previous section, gangs can monitor their members through the community responsibility system. Moreover, these groups provide valuable information to felons. Inmate organizations usually have rigid admission criteria, and they often publicize their acceptable standards of behavior in written documents  \citep{skarbek2010putting,skarbek2012prison}. This enhances cooperation as inmates know that prisoners who are affiliated with gangs are likely to be trustworthy. The affiliation process itself is already a costly and credible signal. Finally, prison gangs can mobilize a significant amount of money, violence and merchandise through their networks. The scale of their operations allows them to offer protection and material benefits to hundreds or even thousands of members \citep{blatchford2008black,camp1985prison}. In an overcrowded penal system, these are all desirable qualities.
+
+Prison gangs are interpreted as an unintentional consequence of the massive demographic shift that has taken place in American prisons in the last years. This shift has made the previous system of norms, the convict code, insufficient to meet the prisoners' demands for social order. Gangs provide security and facilitate trade in a diverse penal system by using effective enforcement mechanisms and transmitting reliable information to inmates. Prison gangs are therefore not a cause, but a solution to many of the inmates' problems.
+
+\section{Conclusion}
+\label{sec:conclusion} 
+
+In this chapter, we have offered a brief overview of the current literature on prison gangs. We have discussed how inmate gangs are a rational response to several challenges of prison life, and how they promote illegal trade and provide security to inmates. We have also argued that prison gangs sustain internal order through a community responsibility system, and discussed how this system fosters trust between inmate communities. Moreover, in Section Three we presented the main rules of the convict code and explained why the code has decreased in importance over the past few years. These are the conditions which allowed gangs to increase their dominance behind bars and later to expand their protection services to street criminals. 
+
+However, there are many under-researched topics in the prison gang literature. Although there are several relevant academic works on gang formation, comparative studies are still uncommon in the field. There is too little work on global variation in prison gang activity. Testing causal mechanisms in a range of prison gangs could help scholars isolate the necessary and sufficient conditions for gang formation and development. Likewise, past studies have relied on comparative case studies \citep{skarbek2016global}, but complementary work with quantitative methods would yield valuable insights. This would require collecting and standardizing large-\textit{n} data, an effort that is yet to be done but which would be fruitful for scholarship on prison gangs \citep{fleisher2001overview}.
+
+Illicit markets in prisons are also not well understood. Thus far, there are only a small number of studies about how prisoners engage in trade, mostly focused on the inmates' demand for drugs and other goods behind bars. Little is known about how drug dealers establish their networks, and how hard drugs determine other aspects of prison life such as internal hierarchies or inmate financing and credit tools \citep[p. 348]{crewe2006prison}. 
+
+Another topic which deserves further attention is how inmate groups decide their ``repertoire of violence,'' that is, which type of violence prison gangs use against their own members or non-affiliated convicts. Whereas some gangs employ physical threats only as a last resort \citep{crewe2006prison,trammell2012enforcing}, others make extensive use of violence as a means to enforce rules. In prisons, violence also has a clearly communicative purpose \citep{gambetta2009codes}, so comparing and analyzing violence strategies would enable us to gain a better grasp of gangs' relative positions in the inmate community and to analyze how these groups manage (or fail) to influence others' decisions.
+
+Finally, the relationship between the state and prison gangs can be further explored by scholars. It is important to know under what conditions the state chooses to confront, appease or collude with an inmate group. It is important to identify which mechanisms lead the state to adopt different approaches when dealing with extralegal groups. As mass incarceration has become one of the most pressing issues not only in the United States but also abroad, a call for evidence-based policies seems timely. Taken together, these efforts will allow researchers and policy makers to formulate better, more efficient approaches for managing prison gangs.
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+
+\end{document}
